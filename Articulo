@@ -1,0 +1,95 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/**
+ *
+ * @author jaime
+ */
+public class Articulo {
+    public int sku;
+    private int existencia;
+    private double costo;
+    private double precio;
+    public String descripcion;
+    
+    
+    public Articulo (int sku, int existencia, String descripcion){
+        this.sku= sku;
+        this.existencia = existencia;
+        this.descripcion = descripcion;
+        
+        
+    }
+    
+    public Articulo(){
+      this(0,0.00, "Sin descripcion");
+    }
+    
+    public int getSku(){
+        return sku;
+    }
+    
+    public void setSku(int sku){
+        this.sku = sku;
+    }
+    
+    public int getExistencia(){
+        return existencia;
+    }
+    
+    public void setExistencia(int existencia){
+        this.existencia = existencia;
+    }
+    
+    public double getCosto(){
+        return costo;
+    }
+    
+    public void setCosto(double costo){
+        this.costo= costo;
+    }
+    
+    public double getPrecio(){
+        return precio;
+        
+    }
+    
+    public void setPrecio(double precio){
+        this.precio= precio;
+    }
+    
+    public String getDescripcion(){
+        return descripcion;
+    }
+    
+    public void setDescricion(String descripcion){
+        this.descripcion= descripcion;
+        
+    }
+    
+    public void compra(double costo, int existencia){
+        setCosto(costo);
+        setExistencia(existencia);
+    }
+    
+    public boolean venta(int numeroArticulos){
+        if(getExistencia()>= numeroArticulos) {
+            setExistencia(getExistencia()- numeroArticulos);
+            return true;
+        } else {
+            return false;
+        }
+    
+    }
+    
+    public double verficarExistencia(){
+        return existencia;    
+    }
+    
+    public void actualizaPrecio(double precio){
+        this.precio = precio;
+    }
+}
